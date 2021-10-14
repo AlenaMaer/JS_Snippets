@@ -19,10 +19,15 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button @click="add(5)">Add 5</button>
-      <button @click="reduce(5)">Reduce 5</button>
+      <button @click.right.prevent="reduce(5)">Reduce 5</button>
+      <p v-once>Starting counter: {{counter}}</p>
       <p>Result: {{ counter }}</p>
-      <input @input="setName" type="text" />
-      <p>Your name: {{name}}</p>
+      <input @input="setName" @keyup.enter="confirmInput" type="text" />
+      <p>Your name: {{confirmedName}}</p>
+      <form @submit="submitForm">
+        <input type="text" name="" id="" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
