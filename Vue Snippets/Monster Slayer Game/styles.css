@@ -13,7 +13,7 @@ body {
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 0.5rem;
-  background-color: teal;
+  background-color: #008080;
   color: white;
   text-align: center;
   margin-bottom: 2rem;
@@ -36,7 +36,7 @@ section {
   width:70%;
 }
 .healthbar__value__player {
-  background-color: #00a876;
+  background-color: #008080;
   width: 100%;
   height: 100%;
 }
@@ -75,8 +75,8 @@ img{
 
 button {
   font: inherit;
-  background-color: teal;
-  border: 1px solid teal;
+  background-color: #008080;
+  border: 1px solid #008080;
   color: white;
   padding: 1rem 2rem;
   /* border-radius: 12px; */
@@ -112,8 +112,8 @@ button:disabled {
   border: 1px solid #af0a78;
 }
 .btn__heal{
-  border: 1px solid #00a876;
-  background-color: #00a876;
+  border: 1px solid #008080;
+  background-color: #008080;
 }
 .btn__flee{
   background: #a55e2a;
