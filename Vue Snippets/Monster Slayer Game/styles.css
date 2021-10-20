@@ -13,7 +13,7 @@ body {
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 0.5rem;
-  background-color: #da8d00;
+  background-color: teal;
   color: white;
   text-align: center;
   margin-bottom: 2rem;
@@ -21,7 +21,7 @@ header {
 
 section {
   width: 90%;
-  max-width: 40rem;
+  max-width: 60rem;
   margin: auto;
 }
 
@@ -32,7 +32,9 @@ section {
   margin: 1rem 0;
   background: #fde5e5;
 }
-
+.monster__healthbar{
+  width:70%;
+}
 .healthbar__value__player {
   background-color: #00a876;
   width: 100%;
@@ -44,11 +46,18 @@ section {
   height: 100%;
 }
 .container {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
-  padding: 0.5rem;
+  padding: 1.5rem;
   margin: 1rem auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
+}
+
+img{
+  width: 30%;
+  object-fit: contain;
 }
 
 #monster h2,
@@ -66,11 +75,11 @@ section {
 
 button {
   font: inherit;
-  border: 1px solid #88005b;
-  background-color: #88005b;
+  background-color: teal;
+  border: 1px solid teal;
   color: white;
   padding: 1rem 2rem;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   margin: 1rem;
   width: 12rem;
   cursor: pointer;
@@ -83,9 +92,7 @@ button:focus {
 
 button:hover,
 button:active {
-  background-color: #af0a78;
-  border-color: #af0a78;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.26);
 }
 
 button:disabled {
@@ -95,10 +102,27 @@ button:disabled {
   color: #3f3f3f;
   cursor: not-allowed;
 }
+.btn__attack{
+  background-color: #dc143c;
+  border: 1px solid #dc143c;
+}
+
+.btn__special-attack{
+  background-color: #af0a78;
+  border: 1px solid #af0a78;
+}
+.btn__heal{
+  border: 1px solid #00a876;
+  background-color: #00a876;
+}
+.btn__flee{
+  background: #a55e2a;
+  border: 1px #a55e2a solid;
+}
 
 #log ul {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 

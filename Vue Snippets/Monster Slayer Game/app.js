@@ -25,7 +25,7 @@ const app = Vue.createApp({
       }
       return { width: this.playerHealth + '%' };
     },
-    mayUseSpecialAttack() {
+    mayUseSpAttackOrHeal() {
       return this.currentRound % 3 !== 0;
     },
   },
@@ -74,7 +74,7 @@ const app = Vue.createApp({
     },
     healPlayer() {
       this.currentRound++;
-      const healValue = getRandValue(8, 20);
+      const healValue = getRandValue(20, 35);
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
       } else {
@@ -83,7 +83,7 @@ const app = Vue.createApp({
       this.addLogMsg('player', 'heal', healValue);
       this.attackPlayer();
     },
-    surrender() {
+    flee() {
       this.winner = 'monster';
     },
     addLogMsg(who, what, value) {

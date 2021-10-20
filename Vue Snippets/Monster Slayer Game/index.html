@@ -18,37 +18,44 @@
     </header>
     <div id="game">
       <section id="monster" class="container">
-        <h2>Monster Health</h2>
+        <img src="public/pipo-enemy042.png" alt="">
+        <div class="monster__healthbar">
+          <h2>Monster Health</h2>
         <div class="healthbar">
           <div
             class="healthbar__value__monster"
             :style="monsterBarStyles"
           ></div>
         </div>
-      </section>
-      <section id="player" class="container">
-        <h2>Your Health</h2>
-        <div class="healthbar">
-          <div class="healthbar__value__player" :style="playerBarStyles"></div>
         </div>
       </section>
-      <section class="container" v-if="winner">
-        <h2>Game Over</h2>
-        <h3 v-if="winner==='monster'">You lost!</h3>
-        <h3 v-else-if="winner==='player'">You won!</h3>
-        <h3 v-else>Draw</h3>
-        <button @click="restastGame">Restart Game</button>
-      </section>
-      <section id="controls" v-else>
-        <button @click="attackMonster">ATTACK</button>
-        <button :disabled="mayUseSpecialAttack" @click="specialAttackMonster">
-          SPECIAL ATTACK
-        </button>
-        <button @click="healPlayer">HEAL</button>
-        <button @click="surrender">SURRENDER</button>
+      <section id="player" class="container">
+        <img src="/public/pipo-enemy018.png" alt="">
+        <section v-if="winner">
+          <h2>Game Over</h2>
+          <h3 v-if="winner==='monster'">You lost!</h3>
+          <h3 v-else-if="winner==='player'">You won!</h3>
+          <h3 v-else>Draw</h3>
+          <button @click="restastGame">Restart Game</button>
+        </section>
+        <section id="controls" v-else>
+          <h2>Hero Health</h2>
+          <div class="healthbar">
+            <div class="healthbar__value__player" :style="playerBarStyles"></div>
+          </div>
+          <h2>Controls</h2>
+          <div>
+          <button @click="attackMonster" class="btn__attack">ATTACK</button>
+          <button :disabled="mayUseSpAttackOrHeal"  class="btn__special-attack" @click="specialAttackMonster">
+            SPECIAL ATTACK
+          </button>
+          <button @click="healPlayer" :disabled="mayUseSpAttackOrHeal" class="btn__heal">HEAL</button>
+          <button @click="flee"  class="btn__flee">FLEE</button>
+        </div>
+        </section>
       </section>
       <section id="log" class="container" v-show="log.length>0">
-        <h2>Battle Log</h2>
+        <h2>Battle Log:</h2>
         <ul>
           <li v-for="item in log">
             <span
